@@ -1,0 +1,102 @@
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+
+# bash
+[[language]]
+auto-format = true
+language-servers = ["bash-language-server"]
+name = "bash"
+
+# css
+[[language]]
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } , "biome" ]
+name = "css"
+
+# golang
+[[language]]
+auto-format = true
+formatter = {command = "goimports"}
+name = "go"
+
+# html
+[[language]]
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } , "biome" ]
+name = "html"
+
+# javascript
+[[language]]
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } , "biome" ]
+name = "javascript"
+
+# json
+[[language]]
+auto-format = true
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] } , "biome", "tailwind-ls" ]
+name = "json"
+
+# jsonc
+[[language]]
+auto-format = true
+language-servers = [ "vscode-language-server" ]
+name = "jsonc"
+
+# jsx
+[[language]]
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } , "biome", "tailwind-ls" ]
+name = "jsx"
+
+# markdown
+[[language]]
+auto-format = true
+language-servers = ["markdown-oxide"]
+name = "markdown"
+
+# tsx
+[[language]]
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } , "biome", "tailwind-ls" ]
+name = "tsx"
+
+# typescript
+[[language]]
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } , "biome", "tailwind-ls" ]
+name = "typescript"
+
+# rust
+[[language]]
+auto-format = true
+language-servers = ["rust-analyzer", "tailwindcss-ls"]
+name = "rust"
+
+# rust anaylzer
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+# tailwindcss language server
+[language-server.tailwindcss-ls]
+config = {userLanguages = {rust = "html", "*.rs" = "html"}}
+
+# toml
+[[language]]
+auto-format = true
+formatter = {command = "taplo", args = ["fmt", "-"]}
+name = "toml"
+
+# yaml
+[[language]]
+auto-format = true
+name = "yaml"
+
+# yaml-language-server
+[language-server.yaml-language-server.config.yaml]
+format = {enable = true}
+validation = true
+
+[language-server.yaml-language-server.config.yaml.schemas]
+"https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
+"https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"
