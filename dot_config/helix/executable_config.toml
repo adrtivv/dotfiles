@@ -1,0 +1,13 @@
+theme = "catppuccin_mocha"
+
+[editor]
+bufferline = "multiple"
+line-number = "relative"
+mouse = false
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+character = "╎"
+render=true
