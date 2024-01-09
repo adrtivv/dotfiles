@@ -51,8 +51,12 @@ esac
 
 # starship.rs config
 eval "$(starship init bash)"
+
 export EDITOR="/usr/bin/hx"
 export VISUAL="/usr/bin/hx"
 
 # add golang downloaded binaries to $PATH
 export PATH="$GOPATH/bin:$PATH"
+
+# homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
